@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses"
+import NewExpense from "./components/NewExpense/NewExpense"
 
 function App() {
   const mockData = [
@@ -22,9 +23,14 @@ function App() {
     },
   ]
 
+  const addNewExpenseHandler = (newExpense) => {
+    console.log(newExpense)
+  }
+
   return (
     <div className="App">
-      <Expenses data={mockData}/>
+      <NewExpense onAddNewExpense={addNewExpenseHandler} />
+      <Expenses mockData={mockData} />
     </div>
   )
 }
