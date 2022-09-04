@@ -3,7 +3,7 @@ import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('')
-  const [enteredAmount, setEnteredAmount] = useState('')
+  const [enteredAmount, setEnteredAmount] = useState(0)
   const [enteredDate, setEnteredDate] = useState('')
 
   const titleChangeHandler = (event) => {
@@ -20,11 +20,14 @@ const ExpenseForm = (props) => {
     event.preventDefault()
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: Number(enteredAmount),
       date: new Date(enteredDate)
     }
 
     props.onSaveExpense(expenseData)
+    setEnteredTitle('')
+    setEnteredAmount('')
+    setEnteredDate('')
   }
 
   return (
@@ -49,6 +52,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancelEditing}>
+          Cancel
+        </button>
         <button type="submit">Add New Expense</button>
       </div>
     </form>
