@@ -2,7 +2,7 @@
 - accounting your expenses and display the detail by year
 
 ## Demo
-(https://github.com/MarcoLin1/expenses-tracker/blob/master/src/assets/demo.png)
+![image](https://github.com/MarcoLin1/expenses-tracker/blob/master/src/assets/demo.png)
 
 ## Getting Started with Create React App
 
